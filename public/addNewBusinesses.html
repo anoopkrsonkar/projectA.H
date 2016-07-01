@@ -1,0 +1,170 @@
+<script>function multipleImages() {
+      jQuery('<div class="div-row-inner"> <div class="col-sm-3 images-row"> <input type="file" name="images[]" id="images_" multiple="multiple" data-required="true" class="image_here multiple_images_class form-control"/> </div> <div class="col-sm-2 time-inner-row-remove remove-btn-add-bs"> <a  style="margin:0px" href="javascript:void(0);" class="btn btn-default delete-image">Remove</a> </div> </div> ').appendTo('.multiple-images');
+  }</script>
+  <form>
+					<div class="form-group">
+          <section class="container">
+      <div class="row">
+          <div class="col-sm-12 add-business-section">
+              <div class="add-business-inner">
+                  <label><h2>Add a Business</h2></label>
+                  <div class="add-field-section">
+                      <div class="col-sm-6 add-input-row">
+                          <label>Name <sup>*</sup></label>
+                          <input type="text" name="name" placeholder="Add Business" ng-model="formData2.name" class="form-control input-box">
+                      </div>
+                      <div class="col-sm-3 add-input-row" >
+                          <label>Phone Number<sup class="color-sub">*</sup></label>
+                          <input type="text" name="phone_no" ng-model="formData2.phone" class="form-control input-box">
+                      </div>
+                      <div class="col-sm-3 add-input-row">
+                          <label>Pincode <sup>*</sup></label>
+                          <input type="text" name="pincode" ng-model="formData2.pincode" class="form-control input-box">
+                      </div>
+                  
+
+                  <div >
+                      <div class="col-sm-9 add-input-row">
+                          <label>Address <sup>*</sup></label>
+                          <input type="text" name="address" placeholder="Add address" ng-model="formData2.address" class="form-control input-box">
+                      </div>
+                      <div class="col-sm-3 add-input-row">
+                          <label>City <sup class="color-sub">*</sup></label>
+                          <input type="text" name="city" placeholder="Add City" ng-model="formData2.city" class="form-control input-box">
+                          </div>
+
+
+						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+						 <br><br>
+						 
+             <!-- Add Business tag start from here -->
+
+  <div class="col-xs-8">
+      
+      <label>Buisness Tag</label><!-- track by item._id-->
+      <oi-select oi-options="item.name for item in shopArr "   ng-model="formData2.tag"
+        multiple
+        placeholder="Select"></oi-select>
+    </div>
+   
+    <i ng-show="loadingProduct" class="glyphicon glyphicon-refresh"></i>
+  
+    
+    
+  
+    <div ng-show="visible"></div></div>
+             <h5 ng-if=(message)>{{message}}</h5>
+						 <br><br>
+              <!-- Add Business tag end from here -->
+             Category:<label for="multipleSelect"> You can select multiple category using ctrl button: </label><br>
+             </div>
+  <select name="multipleSelect" id="multipleSelect" ng-model="formData2.category" multiple>
+      <option value="Food and Restaurants">Food and Restaurants</option>
+      <option value="Tea and Coffee">Tea and Coffee</option>
+      <option value="Nightlife">Nightlife</option>
+      <option value="Beauty, Salons and Spas">Beauty, Salons and Spas</option>
+      <option value="Exercise and Active Life">Exercise and Active Life</option>
+      <option value="Healthcare">Healthcare</option>
+    </select><br>
+             Services:<input type="text" name="service" placeholder="" ng-model="formData2.service"  class="form-control input-box" ng-list >
+						 
+						 <br><br><br>
+						 
+    <ul>
+    
+      <li>
+        <input type="checkbox" ng-checked="all" name="sunday" value="sunday" ng-model="formData2.day[0]" />Sunday</li>
+      <li>
+        <input type="checkbox" ng-checked="all" name="monday" value="monday" ng-model="formData2.day[1]" />Monday</li>
+      <li>
+        <input type="checkbox" ng-checked="all"  name="tuesday" value="tuesday" ng-model="formData2.day[2]"  />Tuesday</li>
+      <li>
+        <input type="checkbox" ng-checked="all" name="wednesday" value="wednesday" ng-model="formData2.day[3]"  />Wednesday</li>
+      <li>
+        <input type="checkbox" ng-checked="all" name="thursday" value="thursday" ng-model="formData2.day[4]"  />Thursday</li>
+      <li>
+        <input type="checkbox" ng-checked="all" name="friday" value="friday" ng-model="formData2.day[5]"  />Friday</li>
+      <li>
+        <input type="checkbox" ng-checked="all" name="saturday" ng-value="saturday" ng-model="formData2.day[6]"  />Saturday</li>
+    </ul>
+    
+
+    <span nf-if =(todos.error)>{{todos.error}}</span>
+    
+
+						
+						 
+
+
+ 
+  
+
+  
+
+
+  
+
+   <label for="exampleInput">Opening Time:</label>
+   <input type="time" id="exampleInputO" name="input" ng-model="formData2.time"
+       placeholder="HH:mm:ss" min="00:00:00" max="23:59:59"  />
+   <div role="alert">
+     <span class="error" ng-show="myForm.input.$error.required">
+         Required!</span>
+     <span class="error" ng-show="myForm.input.$error.time">
+         Not a valid date!</span>
+   
+<br>
+   
+ <label for ="exampleInput">Closing Time:</label>
+<input type="time" id="exampleInputC" name="input" ng-model="formData2.timeC" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" />
+
+<br>
+<br>
+ <div class="div-row-inner">
+                                <div class="col-sm-3 images-row time-section-add">  
+                                    <span>Main Image <sup></sup></span>
+                                    <input type="file" name="default_image" id="default_image" class="main_image form-control width-input" ng-model=formData2.image />
+
+                                  </div>
+                              </div>
+                              <div class="time-section-add">
+                                  <span>Gallery Images</span>
+                                  <div class="div-row-inner">
+                                      <div class="col-sm-3 images-row">
+                                          <input type="file" name="images[]" id="images_" multiple="multiple" class="multiple_images_class image_here form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="multiple-images">
+
+                                    </div>
+                                    <div id="errorimage" style="color:red">
+
+                                    </div>
+                                   <!-- <div class="add-btn-time">
+                                        <a id ='add-more'  href="javascript:void(0);"  id="bus-time" class="btn btn-default" onclick="multipleImages();">Add More</a>
+                                    </div> -->
+
+        <br>
+        <br>
+        
+    
+
+
+
+
+
+					</div></div></div></div></div></div></section></div></form>
+
+					<!-- createToDo() WILL CREATE NEW TODOS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="addBusiness()">Click to Add a new Business </button>
+
+          <br>
+          
+
+         <!-- error: function(error){
+          if(error.responseText == 'showAlert')
+              alert("Please enter correct user name and password.") -->
+				
+
+
+                           

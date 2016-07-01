@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1= title
+    form#formSearch(name="search",method="post",action="/searchBusiness")
+        input#textSearchHere(type="text", placeholder="search here", name="search")
+        button#btnSubmit(type="submit") submit

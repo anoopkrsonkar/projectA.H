@@ -1,0 +1,80 @@
+<!-- FORM TO CREATE TODOS -->
+
+		<div id="todo-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+			<br>
+
+			<hr>
+			<form>
+					<div class="form-group">
+
+
+						<!-- BIND THIS VALUE TO formData.text IN ANGULAR {<div class="container" ng-controller="mainController">
+
+	<div class="col-xs-8">
+      <h3><a href="//tamtakoe.github.io/oi.select/">oi.select</a> playground <small>v {{version}}</small></h3>
+      
+      <oi-select oi-options="item.name for item in shopArr"  ng-model="bundle"
+        multiple
+        placeholder="Select"></oi-select>
+    </div>}-->
+   <!-- <div class='container-fluid' ng-controller="HomeController as homeController">
+		<input type="text" ng-model="searchProduct" typeahead-on-select="homeController.displayProduct($item)" placeholder="Search product by name" typeahead="product for product in homeController.getProduct($viewValue)" typeahead-loading="loadingProduct" class="form-control" ng-list>
+		<i ng-show="loadingProduct" class="glyphicon glyphicon-refresh"></i> -->
+	
+		
+		
+						<input type="text" class="form-control input-lg text-center" placeholder="Search Local Business" ng-model="formData1.text">
+						<br>
+						
+						
+
+					<!-- createToDo() WILL CREATE NEW TODOS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="searchTodo()">Search Here</button>
+				</form>
+				<br><hr>
+				<div  ng-repeat="todo in todos">
+				<br><br><br>
+
+                 <style>
+
+
+                    h5 {
+                         text-align: left;
+    
+                         } 
+                 </style>
+				    <ul >
+
+						<li>
+	<h5 ><a ng-click="getbusinessdetail(todo._id)">
+
+	<h2> {{ todo.name }}</h2><br></a>
+
+	
+	<span ng-if ="todo.city">
+	About {{ todo.name }} :" Discription about {{ todo.name }} will be here"
+	<br>
+	Addresss : {{ todo.city }}
+	<br>
+                  Listed in: {{ todo.tag.toString() }}
+                  <br>
+                  Category: {{ todo.category.toString() }}
+                  <br><br>
+
+                Open on: <span ng-repeat="bus in todo.day">
+                <span ng-if ="bus">{{bus}}</span></span>
+
+                  
+                  <br>
+Opening Time:{{todo.openingTime}}
+Closing Time:{{todo.closeTime}}
+                  <br>
+
+<button type="submit"  ng-click="searchTodo()">Write a review</button>
+
+
+	</span></h5>
+						</li>
+						</ul>
+					</div>

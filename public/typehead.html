@@ -1,0 +1,12 @@
+<div class="jumbotron text-center">
+	<h2></h2>
+	<div class='container-fluid' ng-controller="HomeController as homeController">
+		<input type="text" ng-model="searchProduct" typeahead-on-select="homeController.displayProduct($item)" placeholder="Search product by name" typeahead="product for product in homeController.getProduct($viewValue)" typeahead-loading="loadingProduct" class="form-control" ng-list>
+		<i ng-show="loadingProduct" class="glyphicon glyphicon-refresh"></i>
+	
+		
+		<div class="seperator"> </div>
+	
+		<div ng-show="visible">
+
+		
